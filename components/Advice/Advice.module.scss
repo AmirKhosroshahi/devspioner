@@ -1,0 +1,156 @@
+/* Section Advice */
+
+.AdviceBox {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 40px;
+  color: white;
+}
+
+.AdviceBox > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  padding: 43px 158px 52px 100px;
+}
+
+.AdviceBox > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AdviceBox h5 {
+  font-size: 33pt;
+  font-weight: normal;
+  line-height: 61px;
+}
+
+
+.AdviceBox p {
+  line-height: 31px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+
+/* Section Advice */
+
+.AdviceBox {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 40px;
+
+}
+
+.AdviceBox > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  padding: 43px 158px 52px 100px;
+}
+
+.AdviceBox > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AdviceBox h5 {
+  font-size: 33pt;
+  font-weight: normal;
+  line-height: 61px;
+}
+
+
+.AdviceBox p {
+  line-height: 31px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+/* Section One */
+
+.textSectionOne {
+
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 31px 42px 10px 21px;
+  font-size: 69px;
+  text-align: left;
+  line-height: 89px;
+
+}
+
+.goBottom {
+  font-size: 12pt;
+  font-weight: bold;
+  opacity: 0.8;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  display: flex;
+  width: 177px;
+  line-height: 41px;
+  margin: 18px 0 0 0;
+}
+
+.leftImage {
+
+
+  display: grid;
+  grid-column-gap: 32px;
+  grid-row-gap: 31px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 148px auto;
+  padding: 10px;
+
+}
+
+
+/* Section Advantage */
+
+.SectionAdvantage {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* AdviceBox */
+@media (max-width: 1000px) {
+
+  .AdviceBox {
+    padding: 0;
+  }
+
+  .AdviceBox > div > div > h5 {
+    /*font-size: 27pt;
+    line-height: 53px;
+    text-align: center;*/
+    padding: 23px;
+  }
+
+  .AdviceBox > div > div > p {
+    line-height: 31px;
+    font-weight: bold;
+    /*font-size: 14pt;*/
+    text-align: left;
+    padding: 18px;
+  }
+
+  .AdviceBox > div {
+    padding: 0;
+    /* display: flex;
+     flex-direction: column;*/
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    margin: 100px 0 0 0;
+  }
+
+}

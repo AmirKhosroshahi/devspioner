@@ -1,0 +1,71 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: IRANSansWeb;
+    font-family: GramatikaBold, sans-serif;
+    direction: ltr;
+}
+
+
+@font-face {
+
+    font-family: IRANSansWeb;
+    src: url("../public/font/IRANSansWeb.ttf") format("truetype"),
+    url('../public/font/IRANSansWeb.eot') format("embedded-opentype");
+
+}
+
+
+@font-face {
+
+    font-family: Yek;
+    src: url("../public/font/Yek/Yekan.ttf") format("truetype"),
+    url('../public/font/Yek/Yekan.eot') format("embedded-opentype");
+
+}
+
+
+a {
+    color: white !important;
+    font-size: 10pt;
+    padding: 10px;
+    list-style: none !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+
+    color: white !important;
+
+}
+
+body {
+
+    background: 50% /contain url("../public/image/universe.png") #020220 !important;
+    color: white;
+}
+
+h3::selection {
+
+    color: #ff4918;
+}
+
+
+.activeMenu {
+
+    transition: all 0.7s !important;
+    transform: translateX(0);
+    display: flex !important;
+}
+
+
+.nav > ul {
+
+    transition: all 0.3s;
+    margin: 0;
+}

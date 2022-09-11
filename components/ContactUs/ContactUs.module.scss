@@ -1,0 +1,85 @@
+
+
+/* Contact Us */
+
+.ContentContactUs {
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 40px 90px;
+  flex-direction: column;
+  margin-top: 67px;
+}
+
+.ContentContactUs > form{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-gap: 33px;
+  width: 71%;
+  padding: 40px;
+}
+
+.ContentContactUs > form input {
+
+  padding: 16px;
+  background: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  width: 100%;
+  color: white;
+  font-size: 13pt;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.textAr {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.textAr > textarea {
+  width: 100%;
+  height: 160px;
+  border-radius: 2px;
+  background: none;
+  color: white;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  resize: none;
+  transition: all 0.3s;
+}
+
+
+.ContentContactUs > form input:hover {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.textAr > textarea:hover {
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+}
+
+.sub {
+
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-content: right;
+
+}
+
+.sub > button {
+
+  padding: 10px;
+  background: #3719c9;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+

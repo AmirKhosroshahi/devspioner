@@ -1,0 +1,81 @@
+
+/* HeaderLanding */
+
+.sectionText{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  text-align: center;
+  line-height: 102px;
+  position : relative;
+  @media(max-width:400px){
+    height : 250px;
+    align-items: end;
+  }
+
+}
+
+.TextHeaderLanding {
+
+  background-image: linear-gradient(90deg, #000, #fff 50%, #000);
+  background-size: 200%;
+  background-position: 55.7895% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: EffectText 1s ease-in-out 1;
+  transition: all .1s cubic-bezier(.67, .13, .1, .81);
+}
+
+
+.TextHeaderLanding > h5 {
+  font-size: 6rem;
+  text-align: center;
+}
+
+@keyframes EffectText {
+
+  0% {
+    background-image: linear-gradient(90deg, #000, #fff 55%, #000);
+    transition: all .1s cubic-bezier(.67, .13, .1, .81);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  10% {
+    background-image: linear-gradient(90deg, #000, #fff 35%, #000);
+    transition: all 4s;
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  20% {
+    background-image: linear-gradient(90deg, #000, #fff 55%, #000);
+    transition: all .1s cubic-bezier(.67, .13, .1, .81);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  30% {
+    background-image: linear-gradient(90deg, #000, #fff 35%, #000);
+    transition: all .1s cubic-bezier(.67, .13, .1, .81);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+}

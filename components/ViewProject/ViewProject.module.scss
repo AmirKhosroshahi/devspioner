@@ -1,0 +1,121 @@
+.main {
+  padding: 40px 40px;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+
+}
+
+.contactView {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 40px 40px;
+  @media(max-width: 400px) {
+    padding: 0;
+  }
+  @media(max-width: 999px) {
+    border-bottom: 1px solid rgba(249, 241, 241, 0.32);
+  }
+}
+
+.All_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.image {
+
+  width: 61%;
+  height: 700px;
+  padding: 24px;
+  background-color: #3719c9;
+}
+
+.image > img {
+
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.TextProject {
+  font-size: 35px;
+  width: 400px;
+  z-index: 3;
+  padding: 58px 5px 58px 44px;
+  line-height: 54px;
+  color: white;
+}
+
+.linkViewProject {
+
+  font-size: 12pt;
+  margin: 44px 0;
+  font-weight: bold;
+  display: block;
+  letter-spacing: 10px;
+  width: 219px;
+  padding: 17px 0;
+
+
+}
+
+
+.Technology {
+
+  display: flex;
+
+}
+
+
+.Technology > span {
+
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+  font-size: 10pt;
+  line-height: 30px;
+  font-weight: bold;
+  margin: 0 25px 0 0;
+
+}
+
+.Technology > span > span {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.Technology > span > span > span {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.Technology > span > img {
+
+  width: 100%;
+  height: 100%;
+  display: block;
+
+}
+
+.linkViewProject::after {
+
+  content: '';
+  width: 50%;
+  border-bottom: 1px solid;
+  display: block;
+  transition: all 0.3s;
+
+}
+
+.linkViewProject:hover::after {
+  content: '';
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+}

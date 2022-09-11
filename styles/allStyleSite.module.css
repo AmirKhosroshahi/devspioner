@@ -1,0 +1,1592 @@
+/* GlobalStyle */
+.Global_margTop11 {
+    margin-top: 11px;
+}
+
+.globalCenter {
+    text-align: center;
+}
+
+.notPadding {
+    padding: 0;
+}
+
+/* Headers */
+
+/* right Headers */
+
+.right {
+
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    flex-direction: row-reverse;
+
+}
+
+.right ul {
+
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.right ul li {
+
+    margin: 0 0 0 9px;
+    display: flex;
+
+}
+
+.Cv > a {
+
+    padding: 13px 20px;
+    background-color: #ff4721;
+    border: 2px solid #ff4721;
+    border-radius: 32px;
+    font-size: 11pt;
+    font-weight: bold;
+    line-height: 24px;
+
+}
+
+.Cv > a:hover {
+
+    background: none;
+
+    color: #ff4721;
+}
+
+
+.A_h {
+
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background-color: #5750506b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+
+.A_h:hover {
+
+    background-color: #8a88886b;
+
+}
+
+
+/* Center Headers */
+
+.responsive {
+    display: none;
+}
+
+
+.nav {
+
+    display: flex;
+    position: relative;
+
+}
+
+.nav ul {
+    display: flex;
+    position: relative;
+}
+
+
+.nav ul li {
+
+    margin: 0 0 0 17px;
+    display: flex;
+    position: relative;
+    width: auto;
+
+}
+
+
+.nav ul li a {
+
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 14px;
+}
+
+.activeClick:after {
+    content: '';
+    position: absolute;
+    bottom: 3.3px;
+    width: 100%;
+    border-bottom: 2px solid #3719c9;
+
+}
+
+
+/*.nav ul li a:hover {
+
+    background-color: #241e1e57;
+
+}*/
+
+/* Left Logo */
+
+.log {
+
+    display: flex;
+    justify-content: left;
+    width: 300px;
+    /*height: 100%;*/
+}
+
+.log > a {
+    width: 56%;
+    display: block;
+}
+
+.log img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* End Style Headers */
+
+
+/* HeaderLanding */
+
+.TextHeaderLanding {
+
+    background-image: linear-gradient(90deg, #000, #fff 50%, #000);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: EffectText 1s ease-in-out 1;
+    transition: all .1s cubic-bezier(.67, .13, .1, .81);
+}
+
+
+.TextHeaderLanding > h5 {
+    font-size: 6rem;
+}
+
+@keyframes EffectText {
+
+    0% {
+        background-image: linear-gradient(90deg, #000, #fff 55%, #000);
+        transition: all .1s cubic-bezier(.67, .13, .1, .81);
+        background-size: 200%;
+        background-position: 55.7895% center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    10% {
+        background-image: linear-gradient(90deg, #000, #fff 35%, #000);
+        transition: all 4s;
+        background-size: 200%;
+        background-position: 55.7895% center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    20% {
+        background-image: linear-gradient(90deg, #000, #fff 55%, #000);
+        transition: all .1s cubic-bezier(.67, .13, .1, .81);
+        background-size: 200%;
+        background-position: 55.7895% center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    30% {
+        background-image: linear-gradient(90deg, #000, #fff 35%, #000);
+        transition: all .1s cubic-bezier(.67, .13, .1, .81);
+        background-size: 200%;
+        background-position: 55.7895% center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+}
+
+
+/* Section Advice */
+
+.AdviceBox {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 40px;
+
+}
+
+.AdviceBox > div {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(50%, 1fr) );
+    padding: 43px 158px 52px 100px;
+}
+
+.AdviceBox > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AdviceBox h5 {
+    font-size: 33pt;
+    font-weight: normal;
+    line-height: 61px;
+}
+
+
+.AdviceBox p {
+    line-height: 31px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+/* Section One */
+
+.textSectionOne {
+
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 31px 42px 10px 21px;
+    font-size: 69px;
+    text-align: left;
+    line-height: 89px;
+
+}
+
+.goBottom {
+    font-size: 12pt;
+    font-weight: bold;
+    opacity: 0.8;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    display: flex;
+    width: 177px;
+    line-height: 41px;
+    margin: 18px 0 0 0;
+}
+
+.leftImage {
+
+
+    display: grid;
+    grid-column-gap: 32px;
+    grid-row-gap: 31px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 148px auto;
+    padding: 10px;
+
+}
+
+
+/* Section Advantage */
+
+.SectionAdvantage {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*.HeadTag {
+
+    font-size: 30pt;
+    background-image: linear-gradient(90deg, #000, #fff 50%, #000);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+    margin: 101px 0 64px 0;
+
+}*/
+
+
+.mySwiper {
+    width: 100%;
+    height: 338px;
+    transition: all 4s;
+    margin: 0 0 52px 0;
+
+}
+
+.mySwiper > .swiper-wrapper {
+    transition: all 3s linear 0s !important;
+    transition-duration: 1s !important;
+}
+
+.BoxSlider {
+
+    width: 200px;
+    height: 200px;
+
+}
+
+.imageSlider {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 0.4s;
+}
+
+.posSlid:hover .imageSlider {
+
+    filter: blur(40px);
+
+}
+
+.posSlid:hover a {
+
+    display: block;
+
+}
+
+.posSlid {
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+
+.posSlid > a {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 17px;
+    line-height: 28px;
+    display: none;
+}
+
+.posSlid > a > h3 {
+
+    font-size: 32px;
+    padding: 10px;
+}
+
+.posSlid > a > p {
+
+    font-size: 12pt;
+    padding: 10px;
+}
+
+
+/* Developer Image Box */
+
+
+.dev_image {
+
+    width: 50%;
+    height: 100%;
+
+}
+
+.dev_image > img {
+
+    width: 100%;
+    /*height: 100%;*/
+    display: block;
+}
+
+.textDeve {
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.textDeve > p {
+
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 18px;
+    line-height: 30px;
+    background-image: linear-gradient(90deg, #000, #fff 50%, #000);
+    background-size: 200%;
+    background-position: 55.7895% center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Recent projects */
+
+
+.Content {
+
+    text-align: center;
+    padding: 40px 40px;
+    overflow: hidden;
+    height: 730px;
+    margin: 50px 0 145px 0;
+}
+
+.Recent_projects {
+
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, auto);
+    padding: 54px 0;
+    transform: translate3d(-485px, 0px, 0px);
+    transition: all 0.4s;
+}
+
+
+.Pro {
+
+    height: 100%;
+    width: 516px;
+    display: flex;
+    margin: 0 26px;
+    transition: all 4s;
+
+}
+
+.Pro > img {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+/* View Project */
+
+
+.image {
+
+    width: 61%;
+    height: 590px;
+    padding: 24px;
+    background-color: #3719c9;
+}
+
+.image > img {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.TextProject {
+    font-size: 35px;
+    width: 400px;
+    z-index: 3;
+    padding: 58px 5px 58px 44px;
+    line-height: 54px;
+}
+
+
+.linkViewProject {
+
+    font-size: 12pt;
+    margin: 44px 0;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 10px;
+    width: 219px;
+    padding: 17px 0;
+
+
+}
+
+.linkViewProject::after {
+
+    content: '';
+    width: 50%;
+    border-bottom: 1px solid;
+    display: block;
+    transition: all 0.3s;
+
+}
+
+.linkViewProject:hover::after {
+    content: '';
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+}
+
+
+.Technology {
+
+    display: flex;
+
+}
+
+
+.Technology > span {
+
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+    font-size: 10pt;
+    line-height: 30px;
+    font-weight: bold;
+    margin: 0 25px 0 0;
+
+}
+
+.Technology > span > img {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+.main{
+
+    padding: 40px 40px;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat( auto-fit, minmax(50%, 1fr) );
+
+}
+
+
+/* All Project */
+
+.contentAllProject {
+
+    padding: 40px 0;
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* Our Client */
+
+.OurClient {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.ContentLogo {
+
+    display: grid;
+    grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 40px;
+}
+
+.ContentLogo > span {
+    width: 258px;
+    height: 227px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #32344d;
+    border-bottom: 1px solid #32344d;
+    border-top: 1px solid #32344d;
+    border-left: 1px solid #32344d;
+
+}
+
+.ContentLogo > span > img {
+    display: block;
+    max-height: 30px;
+
+}
+
+
+/* Contact Us */
+
+.ContentContactUs {
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 40px 90px;
+    flex-direction: column;
+}
+
+
+.ContentContactUs > form input {
+
+    padding: 16px;
+    background: no-repeat;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    width: 100%;
+    color: white;
+    font-size: 13pt;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.textAr {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.textAr > textarea {
+    width: 100%;
+    height: 160px;
+    border-radius: 2px;
+    background: none;
+    color: white;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    resize: none;
+    transition: all 0.3s;
+}
+
+
+.ContentContactUs > form input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.textAr > textarea:hover {
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+}
+
+.sub {
+
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: right;
+
+}
+
+.sub > button {
+
+    padding: 10px;
+    background: #3719c9;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+/* Footer */
+
+.FooterText {
+
+    display: flex;
+    padding: 95px 0 71px 24px;
+    font-weight: bold;
+    width: 65%;
+    flex-direction: column
+
+}
+
+.FooterText > h5 {
+
+    font-size: 68pt;
+
+}
+
+/*
+.FooterText > h5 > span {
+
+    font-weight: bold;
+    color: black;
+
+}*/
+
+.FooterText > span {
+
+    font-weight: bold;
+    padding: 16px 0 0 18px;
+    margin-top: 28px;
+
+}
+
+.Contact {
+
+    margin-top: 70px;
+    display: flex;
+
+}
+
+.quote {
+    padding: 21px 26px 21px 26px;
+    background: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 11pt;
+    border: 2px solid white;
+    transition: all 0.5s;
+
+}
+
+.quote:hover {
+
+    background: none;
+    color: white;
+}
+
+.Email {
+
+    padding: 21px 26px 21px 26px;
+    color: #4a4848;
+    border-radius: 30px;
+    font-size: 11pt;
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: background-color 300ms ease;
+
+}
+
+
+/*.Email:hover {
+
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #242323;
+}*/
+
+
+/* Media All */
+
+/* 1080 */
+/* Footer */
+@media (min-width: 1080px) {
+
+    .FooterText {
+        width: 78%;
+    }
+
+}
+
+/* *** 1000px ***  */
+@media (max-width: 1000px) {
+
+    /*.responsive {
+
+        position: absolute;
+        right: 23px;
+        top: 15px;
+        z-index: 5;
+        cursor: pointer;
+        font-size: 22px;
+        display: block;
+
+    }
+
+    .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        width: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        transition: all 0.7s;
+    }
+
+    .nav ul {
+
+        flex-direction: column;
+        height: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        width: 100%;
+        padding: 0;
+        align-items: baseline;
+        display: none;
+        left: -1000px;
+        transition: all 0.7s;
+    }
+
+
+    .nav ul li {
+        justify-content: center;
+    }
+
+
+    */
+    .nav {
+        justify-content: right;
+    }
+
+    .nav > ul {
+        margin: 0;
+    }
+
+    .nav i {
+
+        display: none !important;
+
+    }
+
+    .log > a {
+
+        width: 39%;
+
+    }
+
+}
+
+/* Text Headers */
+@media (max-width: 1000px) {
+
+    .TextHeaderLanding > h5 {
+        font-size: 52pt;
+        width: 100%;
+    }
+
+}
+
+/* AdviceBox */
+@media (max-width: 1000px) {
+
+    .AdviceBox {
+        padding: 0;
+    }
+
+    .AdviceBox > div > div > h5 {
+        /*font-size: 27pt;
+        line-height: 53px;
+        text-align: center;*/
+        padding: 23px;
+    }
+
+    .AdviceBox > div > div > p {
+        line-height: 31px;
+        font-weight: bold;
+        /*font-size: 14pt;*/
+        text-align: left;
+        padding: 18px;
+    }
+
+    .AdviceBox > div {
+        padding: 0;
+        /* display: flex;
+         flex-direction: column;*/
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        margin: 100px 0 0 0;
+    }
+
+}
+
+/* Recent project */
+@media (max-width: 1000px) {
+
+    .Pro {
+
+        height: 538px;
+        width: 446px;
+        display: flex;
+        margin: 0 26px;
+        transition: all 4s;
+
+    }
+
+}
+
+/* View Project */
+@media (max-width: 1000px) {
+
+    .image {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        background-color: #3719c92b;
+    }
+
+    .TextProject {
+
+        width: 100%;
+        font-size: 18pt;
+    }
+
+    .All_box {
+
+        flex-direction: column-reverse;
+
+    }
+
+    .padd {
+        padding: 0;
+    }
+
+}
+
+/* Footer  */
+@media (max-width: 1000px) {
+
+    .FooterText {
+
+        display: flex;
+        padding: 20px;
+        font-weight: bold;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .FooterText > h5 {
+
+        font-size: 32pt;
+        padding: 0 0 0 18px
+
+    }
+
+    .quote {
+
+        display: flex;
+        flex-direction: column;
+        width: 19%;
+        text-align: center;
+        margin: 0;
+
+    }
+
+    .Contact {
+
+        margin-top: 70px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+
+    }
+
+    .Or {
+
+        /*display: block;*/
+        line-height: 42px;
+        padding: 9px;
+
+    }
+}
+
+
+/* 700 */
+/* Text Headers */
+@media (max-width: 700px) {
+
+    .TextHeaderLanding > h5 {
+        font-size: 37pt;
+        width: 100%;
+    }
+
+}
+
+/* AdviceBox */
+@media (max-width: 700px) {
+
+    .AdviceBox {
+        padding: 0;
+    }
+
+    .AdviceBox > div > div > h5 {
+        font-size: 27pt;
+        line-height: 53px;
+        text-align: center;
+        padding: 23px;
+    }
+
+    .AdviceBox > div > div > p {
+        line-height: 31px;
+        font-weight: bold;
+        font-size: 14pt;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .AdviceBox > div {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        margin: 100px 0 0 0;
+    }
+
+}
+
+/* Recent project */
+@media (max-width: 700px) {
+
+    .Pro {
+
+        height: 538px;
+        width: 446px;
+        display: flex;
+        margin: 0 26px;
+        transition: all 4s;
+
+    }
+
+}
+
+/* View Project */
+@media (max-width: 700px) {
+
+    .image {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        background-color: #3719c92b;
+    }
+
+    .TextProject {
+
+        width: 100%;
+        font-size: 18pt;
+    }
+
+    .All_box {
+
+        flex-direction: column-reverse !important;
+
+    }
+
+    .padd {
+        padding: 0;
+    }
+
+}
+
+/* Footer  */
+@media (max-width: 700px) {
+
+    .FooterText {
+
+        display: flex;
+        padding: 20px;
+        font-weight: bold;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .FooterText > h5 {
+
+        font-size: 32pt;
+        padding: 0 0 0 18px
+
+    }
+
+    .quote {
+
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        width: 46%;
+        text-align: center;
+
+    }
+
+    .Contact {
+
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .Or {
+
+        display: block;
+        line-height: 42px;
+        padding: 9px;
+
+    }
+}
+
+
+/* 999 */
+/* Text Headers */
+
+/* Menu */
+@media (max-width: 999px) {
+
+    .responsive {
+
+        position: absolute;
+        right: 23px;
+        top: 15px;
+        z-index: 5;
+        cursor: pointer;
+        font-size: 18pt;
+        display: block;
+
+    }
+
+    .nav {
+        position: absolute;
+        top: 0;
+        transform: translateX(100%);
+        justify-content: center;
+        width: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        transition: all 0.7s;
+    }
+
+    .nav ul {
+
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        align-items: baseline;
+        /*display: none;*/
+        /*left: -1000px;*/
+        transition: all 0.7s;
+    }
+
+
+    .nav ul li {
+        justify-content: center;
+    }
+
+
+    .nav i {
+
+        display: none !important;
+
+    }
+
+    .log > a {
+
+        width: 49%;
+
+    }
+
+}
+
+/* Text Headers Land */
+@media (max-width: 999px) {
+
+    .TextHeaderLanding > h5 {
+        font-size: 59pt;
+        width: 100%;
+    }
+
+}
+
+/* AdviceBox */
+@media (max-width: 999px) {
+
+    .AdviceBox {
+        padding: 20px;
+    }
+
+    .AdviceBox > div > div > h5 {
+        font-size: 27pt;
+        line-height: 53px;
+        /*text-align: center;*/
+        padding: 23px;
+    }
+
+    .AdviceBox > div > div > p {
+        line-height: 31px;
+        font-weight: bold;
+        font-size: 14pt;
+        text-align: justify;
+        padding: 18px;
+    }
+
+    .AdviceBox > div {
+        padding: 0;
+        /*display: flex;*/
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        margin: 100px 0 0 0;
+    }
+
+}
+
+/* Recent project */
+@media (max-width: 999px) {
+
+    .Pro {
+
+        height: 538px;
+        width: 446px;
+        display: flex;
+        margin: 0 26px;
+        transition: all 4s;
+
+    }
+
+}
+
+/* View Project */
+@media (max-width: 999px) {
+
+    .image {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        background-color: #3719c92b;
+    }
+
+    .TextProject {
+
+        width: 100%;
+        font-size: 18pt;
+    }
+
+    .All_box {
+
+        flex-direction: column-reverse !important;
+
+    }
+
+    .padd {
+        padding: 0;
+    }
+
+}
+
+/* Footer  */
+@media (max-width: 999px) {
+
+    .FooterText {
+
+        display: flex;
+        padding: 20px;
+        font-weight: bold;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .FooterText > h5 {
+
+        font-size: 45pt;
+        padding: 15px 0 0 22px;
+        line-height: 76px;
+
+    }
+
+    .quote {
+
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        text-align: center;
+
+    }
+
+    .Contact {
+
+        display: flex;
+        text-align: left;
+
+    }
+
+    .Or {
+
+     /*   display: block;
+        line-height: 42px;
+        padding: 9px;*/
+
+    }
+
+    .Email {
+
+        width: 75%;
+
+    }
+
+}
+
+
+/* *** 500px ***  */
+@media (max-width: 500px) {
+
+    .responsive {
+
+        position: absolute;
+        right: 23px;
+        top: 15px;
+        z-index: 5;
+        cursor: pointer;
+        font-size: 22px;
+        display: block;
+
+    }
+
+    .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        width: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        transition: all 0.7s;
+    }
+
+    .nav ul {
+
+        flex-direction: column;
+        height: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        width: 100%;
+        padding: 0;
+        align-items: baseline;
+        /*display: none;
+        left: -1000px;*/
+        transition: all 0.7s;
+    }
+
+
+    .nav ul li {
+        justify-content: center;
+    }
+
+
+    .nav i {
+
+        display: none !important;
+
+    }
+
+    .log > a {
+
+        width: 39%;
+
+    }
+
+}
+
+
+/* Media Headers */
+
+/* *** 400px ***  */
+@media (max-width: 400px) {
+
+    .responsive {
+
+        position: absolute;
+        right: 23px;
+        top: 15px;
+        z-index: 5;
+        cursor: pointer;
+        font-size: 22px;
+        display: block;
+
+    }
+
+    .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        width: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        transition: all 0.7s;
+    }
+
+    .nav ul {
+
+        flex-direction: column;
+        height: 100%;
+        background: rgb(3, 3, 38) none repeat scroll 0 0;
+        width: 100%;
+        padding: 0;
+        align-items: baseline;
+        /*display: none;
+        left: -1000px;*/
+        transition: all 0.7s;
+    }
+
+
+    .nav ul li {
+        justify-content: center;
+    }
+
+
+    .nav i {
+
+        display: none !important;
+
+    }
+
+    .log > a {
+
+        width: 39%;
+
+    }
+
+}
+
+/* Text Headers */
+@media (max-width: 400px) {
+
+    .TextHeaderLanding > h5 {
+        font-size: 29pt;
+        width: 100%;
+    }
+
+}
+
+/* AdviceBox */
+@media (max-width: 400px) {
+
+    .AdviceBox {
+        padding: 0;
+    }
+
+    .AdviceBox > div > div > h5 {
+        font-size: 21pt;
+        line-height: 53px;
+        text-align: center;
+    }
+
+    .AdviceBox > div > div > p {
+        line-height: 31px;
+        font-weight: bold;
+        font-size: 12pt;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .AdviceBox > div {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+        margin: 100px 0 0 0;
+    }
+
+}
+
+/* Recent project */
+@media (max-width: 400px) {
+
+    .Pro {
+
+        height: 600px;
+        width: 400px;
+        display: flex;
+        margin: 0 26px;
+        transition: all 4s;
+
+    }
+
+}
+
+/* View Project */
+@media (max-width: 400px) {
+
+    .image {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        background-color: #3719c92b;
+    }
+
+    .TextProject {
+
+        width: 100%;
+        font-size: 18pt;
+    }
+
+    .All_box {
+
+        flex-direction: column-reverse;
+
+    }
+
+}
+
+/* Footer  */
+@media (max-width: 400px) {
+
+    .FooterText {
+
+        display: flex;
+        padding: 20px;
+        font-weight: bold;
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .FooterText > h5 {
+
+        font-size: 32pt;
+        padding: 0 0 0 18px
+
+    }
+
+    .quote {
+
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        text-align: center;
+
+    }
+
+    .Contact {
+
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .Or {
+
+        display: block;
+        line-height: 42px;
+        padding: 9px;
+
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+
+
+/* Our Client */
+
+.OurClient {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.ContentLogo {
+
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 40px;
+}
+
+.ContentLogo > span {
+  width: 258px;
+  height: 227px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #32344d;
+  border-bottom: 1px solid #32344d;
+  border-top: 1px solid #32344d;
+  border-left: 1px solid #32344d;
+
+}
+
+.ContentLogo > span > img {
+  display: block;
+  max-height: 30px;
+
+}
+
