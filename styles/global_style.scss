@@ -47,7 +47,9 @@ a:hover {
 body {
     background: 50% /contain url("../public/image/universe.png") #020220 !important;
     color: white;
-    cursor: none;
+    @media (min-width: 900px) {
+        cursor: none;
+    }
 }
 
 h3::selection {
@@ -67,41 +69,59 @@ h3::selection {
     margin: 0;
 }
 
-.right-eye {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: rgb(36, 27, 27) none repeat scroll 0 0;
+.pointer{
+     display: none;
+    @media (min-width: 900px) {
+      &{
+          display: block;
+          &__right-eye{
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: rgb(36, 27, 27) none repeat scroll 0 0;
+              display: block;
+              position: absolute;
+              right: 4px;
+              top: 10px;
+              transition: all 0.2s;
+          }
+
+          &__left-eye{
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: rgb(36, 27, 27) none repeat scroll 0 0;
+              display: block;
+              position: absolute;
+              left: 4px;
+              top: 10px;
+              transition: all 0.2s;
+          }
+          &__nose{
+              width: 2px;
+              height: 7px;
+              background: rgb(36, 27, 27) none repeat scroll 0 0;
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              top: 14px;
+              transition: all 0.2s;
+          }
+      }
+
+    }
+
+}
+
+.open{
     display: block;
-    position: absolute;
-    right: 4px;
-    top: 10px;
-    transition: all 0.2s;
-
 }
 
-.left-eye {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: rgb(36, 27, 27) none repeat scroll 0 0;
-    display: block;
-    position: absolute;
-    left: 4px;
-    top: 10px;
-    transition: all 0.2s;
-
+.close{
+    display: none;
 }
 
-.nose {
-    width: 2px;
-    height: 7px;
-    background: rgb(36, 27, 27) none repeat scroll 0 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 14px;
-    transition: all 0.2s;
-}
+
+
 

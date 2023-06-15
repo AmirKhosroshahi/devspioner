@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ContactUs from '../../components/ContactUs/ContactUs'
 const Index = () => {
     return (
@@ -7,5 +7,8 @@ const Index = () => {
         </div>
     );
 };
+
+
+
 
 export default Index;

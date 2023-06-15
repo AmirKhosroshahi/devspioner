@@ -1,37 +1,171 @@
-const eventActiveMenu = (event, checkedMoveEnter, hover) => {
-    let parentElementList = event.target.parentElement;
-    let positionTags = event.target.getBoundingClientRect();
-    /* Checked Mouse Enter */
-    if (parentElementList.classList[1] !== 'Header_activeClick__KmH6_') {
-        checkedMoveEnter ? hover.current.style = `width:${positionTags.width}px;border:1px solid #3719c9;position:absolute;left:${parentElementList.offsetLeft}px;bottom:0;transition: all 0.4s;` : hover.current.style = `width:${positionTags.width}px;height:0;border:0 solid #3719c9;position:absolute;left:${parentElementList.offsetLeft}px;bottom:0;`;
+import React from "react";
+import anime from "animejs";
+import Styles from "../components/Header/Header.module.scss";
 
+
+const activeHover = (active) => {
+    const getLink = document.querySelectorAll(".nav>ul>li");
+    getLink.forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+            const activeHover = document.querySelector('.bor');
+            !active ? activeHover.style = `width:0;height:0;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.2s;` : activeHover.style = `width:${e.target.clientWidth}px;height:2px;border-bottom: 2px solid #3719c9;position:absolute;bottom:10px;left:${item.offsetLeft}px;transition: all 0.2s;`
+        })
+    })
+    getLink.forEach(item => {
+        item.addEventListener('mouseleave', (e) => {
+            const activeHover = document.querySelector('.bor');
+            !active ? activeHover.style = `width:0;height:0;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.2s;` : activeHover.style = `width:${e.target.clientWidth}px;transform: scale(0);height:2px;border-bottom: 2px solid #3719c9;position:absolute;bottom:10px;left:${item.offsetLeft}px;transition: all 0.6s;`
+
+        })
+    })
+}
+
+const backgroundHeader = () => {
+    let getTagHeader = document.querySelector(".header")
+    window.addEventListener("scroll", e => {
+        if (window.scrollY > 0) {
+            getTagHeader.style = 'position:fix;background:rgba(2, 2, 31, 0.87) none repeat scroll 0% 0%;padding-top: 10px;z-index:2'
+        } else {
+            getTagHeader.style = 'padding: 10px;'
+        }
+
+    })
+}
+
+/* Effect Anime */
+const effectScrollHome = (tagName) => {
+    const logoAnimation = anime.timeline({
+        autoplay: true,
+        delay: 100
+    })
+    logoAnimation
+        .add({
+            targets: `.${tagName}`,
+            translateY: [-100, 0],
+            opacity: [0, 1],
+            elasticity: 600,
+            duration: 1600,
+            easing: 'easeOutExpo',
+        })
+}
+
+function effectScrollProject() {
+    const getAllTagProject = document.querySelectorAll('.parent-image');
+    getAllTagProject.forEach(item => {
+        item.addEventListener('mousemove', function (e) {
+            let attrPosition = item.getBoundingClientRect();
+            let posY = Math.abs(Math.floor(attrPosition.y));
+            const dataIud = item.dataset.iud;
+            item.style = '';
+        })
+
+    })
+
+}
+
+const transformEffect = (transform) => {
+    let tar = 0;
+    let tagAllProject = transform.current;
+    window.addEventListener('scroll', function (e) {
+        if (tar !== null && tagAllProject !== null) {
+            window.scrollY <= tagAllProject?.offsetTop ? tar++ : tar = 0;
+            window.scrollY <= tagAllProject?.offsetTop || window.scrollY <= tagAllProject?.offsetTop / 2 && (tar = 0)
+            window.scrollY <= tagAllProject?.offsetTop ? tagAllProject.style = `transform:translateX(${tar >= 1000 ? 0 : -tar * 2}px);` : tagAllProject.style = `transform:translateX(${tar}px);`;
+        }
+    })
+
+}
+
+const movCircleHandler = (event, CircleLeft, CircleRight) => {
+    /* Left && Right Mov */
+    const allWidth = window.innerWidth;
+    if (allWidth / 2 <= event.clientX) {
+        CircleRight.current.style = `left:80px;`;
+        CircleLeft.current.style = `right:40px;`;
+    } else {
+        CircleRight.current.style = `left:40px;`;
+        CircleLeft.current.style = `right:100px;`;
     }
-}
 
-/* Set New Title */
-const setNewTitle = (nameTitle) => {
-    document.title = nameTitle;
-}
-
-/* PrevDefault Submit*/
-const PrevDefault = (form) => {
-    form.preventDefault();
-}
-
-
-/* Click Link Move To Up */
-const moveUpLink = (link) => {
-
-    // window.scrollTo(0,0);
-}
-
-
-const openMenu = (priv, menu, thisTag) => {
-    const tagNav = menu.current;
-    priv ? tagNav.classList.add('activeMenu') : tagNav.classList.remove('activeMenu');
-    priv ? thisTag.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"></path></svg>' : thisTag.innerHTML = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" className="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"></path></svg>';
 
 }
 
+const odd = (number) => {
+    let style = ''
+    for (let i = 0; i <= number; i++) {
+        i % 2 === 0 ? style = 'row' : style = 'row-reverse'
+    }
+    return style;
+}
 
-export {openMenu, eventActiveMenu, moveUpLink, PrevDefault, setNewTitle}
+const cursorPointer = (tagPointer, rightEye, leftEye, nose) => {
+    window.addEventListener('mousemove', function (event) {
+        tagPointer.style = `
+            width:35px;
+            height:35px;
+            background: #fff;
+            border: 1px solid #fff;
+            position:fixed;
+            top:${event.clientY - 5}px;
+            left:${event.clientX - 9}px;
+            border-radius:50%;
+            transform: matrix(1, 0, 0, 1, 0, 0);
+            border-width: 2px;`;
+        const allWidth = window.innerWidth;
+        if (allWidth / 2 <= event.clientX) {
+            rightEye.style.right = '3px';
+            leftEye.style.left = '5px';
+            nose.style.left = '2px';
+        } else {
+            rightEye.style.right = '6px';
+            leftEye.style.left = '3px';
+            nose.style.left = '-5px';
+        }
+
+    })
+
+}
+
+const openMenu = (setActiveClick, activeClick) => {
+    setActiveClick(privState => !privState);
+    const openMenuIcon = document.querySelector('.open');
+    const closeMenuIcon = document.querySelector('.close');
+    const Menu = document.querySelector('.nav>ul');
+
+    if (activeClick) {
+        openMenuIcon.style.display = 'none';
+        closeMenuIcon.style.display = 'block';
+    } else {
+        openMenuIcon.style.display = 'block';
+        closeMenuIcon.style.display = 'none';
+    }
+    Menu.classList.toggle(Styles['open']);
+
+
+
+}
+
+const blink = (rightEye, leftEye) => {
+    let effectCloseTheEyes = setInterval(() => {
+        rightEye.style.transform = `rotateX(100deg)`;
+        leftEye.style.transform = `rotateX(100deg)`;
+    }, 5000)
+    let effectOpenEye = setInterval(() => {
+        rightEye.style.transform = `rotateX(0)`;
+        leftEye.style.transform = `rotateX(0)`;
+    }, 3000)
+
+}
+
+export {
+    odd,
+    effectScrollHome,
+    effectScrollProject,
+    activeHover,
+    backgroundHeader,
+    movCircleHandler,
+    cursorPointer,
+    blink,
+    transformEffect,
+    openMenu,
+};

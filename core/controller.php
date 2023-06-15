@@ -5,12 +5,13 @@ class Controller
 
     function __construct()
     {
-
+        
     }
 
     function view($viewsUrl, $data = [])
     {
         require_once('views/' . $viewsUrl . '.php');
+
     }
 
     function model($modelUrl)
@@ -21,5 +22,5 @@ class Controller
 
     }
 
-
 }
+

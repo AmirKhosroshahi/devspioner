@@ -1,93 +1,55 @@
 import React, {useState, useEffect} from 'react';
-/* Import Style Module */
 import Styles from './Header.module.scss';
-/* Import Bootstrap */
 import 'bootstrap/dist/css/bootstrap.min.css';
-/* Import Link react-router-dom */
 import Link from "next/link";
-/* Import Clsx */
 import clsx from "clsx";
-/* Import FontAwesomeIcon */
+import Image from "next/image";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
-
-
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
+import {activeHover, backgroundHeader, openMenu} from '../../functionControlle/allFunction';
+import {useRouter} from "next/router";
+import axios from "axios";
 /* Function Component */
 const Header = () => {
-
     /*  Create State  */
     const [active, setActive] = useState(true);
+    const [activeClick, setActiveClick] = useState(true);
+    const router = useRouter();
+    const nameLink = router.asPath;
     const dataMenu = [
         {
             link: '/',
             title: 'Home',
-            activeClass: clsx(Styles.activeClick)
+            activeClass: nameLink === '/' && clsx(Styles.activeClick)
         }
         ,
         {
             link: '/projects',
             title: 'Projects',
-            activeClass: ''
+            activeClass: nameLink === '/projects' && clsx(Styles.activeClick)
         }
         ,
         {
             link: '/contactus',
             title: 'Contact us',
-            activeClass: ''
+            activeClass: nameLink === '/contactus' && clsx(Styles.activeClick)
         }
     ];
     useEffect(() => {
-        let getTagHeader = document.querySelector(".header")
-        window.addEventListener("scroll", e => {
-            if (window.scrollY > 0) {
-                getTagHeader.style = 'background:rgba(2, 2, 31, 0.87) none repeat scroll 0% 0%;padding-top: 10px;'
-            } else {
-                getTagHeader.style = 'padding: 10px;'
-            }
-        })
-
+        backgroundHeader();
+        axios.get(process.env.NEXT_PUBLIC_CHECK_LOGIN_ADMIN)
+       
     })
     useEffect(() => {
-        const getLink = document.querySelectorAll(".nav>ul>li>a");
-        getLink.forEach((ele) =>
-            ele.addEventListener("click", function (event) {
-                getLink.forEach((ele) => ele.classList.remove(clsx(Styles.activeClick)));
-                this.classList.add(clsx(Styles.activeClick))
-            })
-        );
-    }, [])
-    useEffect(() => {
-        const activeHover = () => {
-            const getLink = document.querySelectorAll(".nav>ul>li");
-            getLink.forEach(item => {
-                item.addEventListener('mouseover', (e) => {
-                    const activeHover = document.querySelector('.bor');
-                    !active ? activeHover.style = `width:0;height:0;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.2s;` : activeHover.style = `width:${e.target.clientWidth}px;height:2px;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.2s;`
-                })
-            })
-            getLink.forEach(item => {
-                item.addEventListener('mouseleave', (e) => {
-                    const activeHover = document.querySelector('.bor');
-                    !active ? activeHover.style = `width:0;height:0;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.2s;` : activeHover.style = `width:${e.target.clientWidth}px;transform: scale(0);height:2px;border-bottom: 2px solid #3719c9;position:absolute;bottom:0;left:${item.offsetLeft}px;transition: all 0.6s;`
-
-                })
-            })
-        }
-        activeHover();
+        activeHover(active);
     }, [active])
-    const goToHome = () => {
-        const getLinkFirstChild = document.querySelector(".nav>ul>li:first-child a");
-        const getLinkAll = document.querySelectorAll(".nav>ul>li>a");
-        getLinkAll.forEach(item=>{
-            item.classList.remove(clsx(Styles.activeClick))
-        })
-        getLinkFirstChild.classList.add(clsx(Styles.activeClick))
-    }
+
     const mapDataMenu = dataMenu.map(item => {
         return (
-            <li key={item.title} className='Link'>
+            <li key={item.title}>
                 <Link href={item.link}>
-                    <a className={item.activeClass}>
+                    <a className={clsx(item.activeClass)} onClick={() => openMenu(setActiveClick, activeClick)}>
                         {item.title}
                     </a>
                 </Link>
@@ -95,26 +57,31 @@ const Header = () => {
         )
     })
 
-
     return (
-        <header className={clsx(Styles.menuHeader, 'header')}>
+        <header className={clsx(Styles['menu-header'], 'header')}>
             <div className='container-fluid'>
-                <div className='row'>
-                    <div className="col-xl-8 col-sm-6">
-                        <div className={Styles.log}>
-                            <Link href="/" className={Styles.notPadding}>
-                                <a onClick={() => goToHome()}>
-                                    <img
+                <div className={clsx('row', Styles['menu-header__content-menu'])}>
+                    <div className={Styles['menu-header__content-menu__left']}>
+                        <div className={clsx(Styles['menu-header__content-menu__left__log'], 'log')}>
+                            <Link href="/" className={Styles['menu-header__content-menu__left__log__not-padding']}>
+                                <a>
+                                    <Image
                                         src='/image/logo.png'
                                         alt="Logo"
+                                        width={'158'}
+                                        height={'100%'}
                                     />
                                 </a>
                             </Link>
                         </div>
                     </div>
-                    <div className="col-xl-4 col-sm-6">
-                        <span className={Styles.responsive}><FontAwesomeIcon icon={faBars}/></span>
-                        <nav className={clsx(`${Styles.nav} nav`)}>
+                    <div className={Styles['menu-header__content-menu__right']}>
+                        <span className={Styles['menu-header__content-menu__right__responsive']}
+                              onClick={() => openMenu(setActiveClick, activeClick)}>
+                            <FontAwesomeIcon className='open' icon={faBars}/>
+                            <FontAwesomeIcon className='close' icon={faXmark}/>
+                        </span>
+                        <nav className={clsx(Styles['menu-header__content-menu__right__nav'], 'nav')}>
                             <ul>
                                 {mapDataMenu}
                             </ul>

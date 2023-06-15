@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "next/image";
 import Styles from './page404.module.scss'
 const Index = () => {
 

@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import Link from "next/Link";
 // import Styled from 'styled-components';
 import Styles from './SectionAdvantage.module.scss';
-
+import Image from "next/image";
 /* Style && File  swiper */
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
@@ -29,7 +29,6 @@ const SectionAdvantage = () => {
 
     const linkText = useRef(null);
 
-
     return (
         <div className={Styles.SectionAdvantage}>
             <H_head margin={'60px 0 64px 0'}>View portfolio</H_head>
@@ -49,7 +48,13 @@ const SectionAdvantage = () => {
                 className={Styles.mySwiper}
             >
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj1} alt=""/>
+                    <Image
+                        className={Styles.imageSlider}
+                        src={proj1}
+                        alt=""
+                        width={500}
+                        height={500}
+                    />
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>
@@ -60,7 +65,13 @@ const SectionAdvantage = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj2} alt=""/>
+                    <Image
+                        className={Styles.imageSlider}
+                        src={proj2}
+                        alt=""
+                        width={500}
+                        height={500}
+                    />
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>
@@ -71,7 +82,13 @@ const SectionAdvantage = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj3} alt=""/>
+                    <Image
+                        className={Styles.imageSlider}
+                        src={proj3}
+                        alt=""
+                        width={500}
+                        height={500}
+                    />
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>
@@ -82,7 +99,12 @@ const SectionAdvantage = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj4} alt=""/>
+                    <Image
+                           className={Styles.imageSlider}
+                           src={proj4}
+                           alt=""
+                           width={500}
+                           height={500}/>
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>
@@ -93,7 +115,12 @@ const SectionAdvantage = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj5} alt=""/>
+                    <Image
+                        className={Styles.imageSlider}
+                        src={proj5}
+                        alt=""
+                        width={500}
+                        height={500}/>
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>
@@ -104,7 +131,10 @@ const SectionAdvantage = () => {
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide className={Styles.posSlid}>
-                    <img className={Styles.imageSlider} src={proj6} alt=""/>
+                    <Image className={Styles.imageSlider} src={proj6}
+                           width={500}
+                           height={500}
+                           alt=""/>
                     <Link href='/' ref={linkText}>
                         <a>
                             <h3>FxSound</h3>

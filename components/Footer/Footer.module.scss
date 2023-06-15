@@ -1,88 +1,141 @@
-
 /* Footer */
 
-.footerSite{
-  display : flex;
-  background-color:#030326;
+.footer-site {
+  display: flex;
+  background-color: #030326;
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
   margin-top: 100px;
-  padding: 0 49px 0 49px;
+  padding: 0 49px 0 26px;
   color: white;
-}
-.FooterText {
 
-  display: flex;
-  padding: 95px 0 71px 24px;
-  font-weight: bold;
-  width: 65%;
-  flex-direction: column;
-  color: white;
-}
-
-.FooterText > h5 {
-
-  font-size: 68pt;
-
-}
-
-/*
-.FooterText > h5 > span {
-
+  &__footer-text {
+    display: flex;
+    padding: 95px 0 71px 0;
     font-weight: bold;
-    color: black;
+    width: 100%;
+    flex-direction: column;
+    color: white;
 
-}*/
+    & > h5 {
+      font-size: 45pt;
+      line-height: 74px;
+    }
 
-.FooterText > span {
+    & > span {
+      font-weight: bold;
+      margin-top: 28px;
+    }
 
-  font-weight: bold;
-  padding: 16px 0 0 18px;
-  margin-top: 28px;
+    &__contact {
+      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__quote {
+        padding: 21px 26px 21px 26px;
+        background: none;
+        color: white;
+        border-radius: 30px;
+        font-size: 11pt;
+        border: 2px solid white;
+        transition: all 0.5s;
+        z-index: 1;
+      }
+
+      &__quote:hover {
+        background: none;
+        color: white;
+      }
+
+      &__email {
+        padding: 21px 17px 21px 17px;
+        color: #4a4848;
+        border-radius: 30px;
+        font-size: 11pt;
+        background-color: rgb(255, 255, 255);
+        -webkit-transition: background-color 300ms ease;
+        &__or{
+          display: block;
+          padding: 20px 0;
+        }
+      }
+
+    }
+  }
+
+  @media (min-width: 900px) {
+    &{
+      display: flex;
+      background-color: #030326;
+      flex-direction: column;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+      margin-top: 100px;
+      padding: 0 49px 0 49px;
+      color: white;
+
+      &__footer-text {
+        display: flex;
+        padding: 95px 0 71px 24px;
+        font-weight: bold;
+        width: 65%;
+        flex-direction: column;
+        color: white;
+
+        & > h5 {
+          font-size: 68pt;
+          line-height: 100px;
+        }
+
+        & > span {
+          font-weight: bold;
+          padding: 16px 0 0 18px;
+          margin-top: 28px;
+        }
+
+        &__contact {
+          margin-top: 70px;
+          display: flex;
+          flex-direction: row;
+          &__quote {
+            padding: 21px 26px 21px 26px;
+            background: none;
+            color: white;
+            border-radius: 30px;
+            font-size: 11pt;
+            border: 2px solid white;
+            transition: all 0.5s;
+            z-index: 1;
+          }
+
+          &__quote:hover {
+            background: none;
+            color: white;
+          }
+
+          &__email{
+            padding: 21px 26px 21px 26px;
+            color: #4a4848;
+            border-radius: 30px;
+            font-size: 11pt;
+            background-color: rgb(255, 255, 255);
+            -webkit-transition: background-color 300ms ease;
+            &__or{
+              display: inline;
+              padding: 0;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
 
 }
-
-.Contact {
-
-  margin-top: 70px;
-  display: flex;
-
-}
-
-.quote {
-  padding: 21px 26px 21px 26px;
-  background: none;
-  color: white;
-  border-radius: 30px;
-  font-size: 11pt;
-  border: 2px solid white;
-  transition: all 0.5s;
-
-}
-
-.quote:hover {
-
-  background: none;
-  color: white;
-}
-
-.Email {
-
-  padding: 21px 26px 21px 26px;
-  color: #4a4848;
-  border-radius: 30px;
-  font-size: 11pt;
-  background-color: rgb(255, 255, 255);
-  -webkit-transition: background-color 300ms ease;
-
-}
-
-
-/*.Email:hover {
-
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #242323;
-}*/
 

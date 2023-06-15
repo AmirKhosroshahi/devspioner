@@ -2,120 +2,241 @@
   padding: 40px 40px;
   display: grid;
   position: relative;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
 
-}
 
-.contactView {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 40px 40px;
-  @media(max-width: 400px) {
-    padding: 0;
+  &__contact-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &__all-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column !important;
+
+      &__image {
+        width: 100%;
+        padding: 10px;
+        background-color: #3719c9;
+        height: 391px;
+         &>span{
+           width: 100% !important;
+           height: 100% !important;
+         }
+        & > img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+
+      &__text-project {
+        font-size: 21px;
+        width: 100%;
+        z-index: 3;
+        line-height: 54px;
+        color: white;
+        margin: 28px 0;
+
+      }
+
+      &__link-view {
+        font-size: 11pt;
+        margin: 0 0 22px 0;
+        font-weight: bold;
+        display: block;
+        letter-spacing: 10px;
+        width: 219px;
+        padding: 17px 0;
+      }
+
+      &__link-view::after {
+        content: '';
+        width: 50%;
+        border-bottom: 1px solid;
+        display: block;
+        transition: all 0.3s;
+
+      }
+
+      &__link-view:hover::after {
+        content: '';
+        transition: all 0.3s;
+        display: block;
+        width: 90%;
+      }
+
+      &__technology {
+        display: flex;
+
+        & > span > img {
+
+          width: 100%;
+          height: 100%;
+          display: block;
+
+        }
+
+        & > span {
+          width: 50px;
+          height: 50px;
+          padding: 4px;
+          font-size: 10pt;
+          line-height: 30px;
+          font-weight: bold;
+          margin: 0 25px 0 0;
+
+        }
+
+        & > span > span {
+          width: 100% !important;
+          height: 100% !important;
+
+        }
+
+        & > span > span > span {
+          width: 100% !important;
+          height: 100% !important;
+        }
+
+      }
+
+    }
+
   }
-  @media(max-width: 999px) {
-    border-bottom: 1px solid rgba(249, 241, 241, 0.32);
+
+  @media (min-width: 900px) {
+
+    .main {
+      padding: 40px 40px;
+      display: grid;
+      position: relative;
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+      border-bottom: 1px solid #ffffff36;
+
+      &__contact-view {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 40px 40px;
+
+        &__row {
+          flex-direction: row !important;
+        }
+
+        &__column {
+          flex-direction: row-reverse !important;
+        }
+
+        &__all-box {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: space-around;
+
+
+          &__image {
+            width: 61%;
+            height: 700px;
+            padding: 24px;
+            background-color: #3719c9;
+
+            & > img {
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+          }
+
+          &__text-project {
+            font-size: 35px;
+            width: 400px;
+            z-index: 3;
+            padding: 58px 5px 58px 44px;
+            line-height: 54px;
+            color: white;
+
+          }
+
+          &__link-view {
+            font-size: 12pt;
+            margin: 44px 0;
+            font-weight: bold;
+            display: block;
+            letter-spacing: 10px;
+            width: 219px;
+            padding: 17px 0;
+            position: relative;
+            z-index: 10;
+          }
+
+          &__link-view::after {
+            content: '';
+            width: 50%;
+            border-bottom: 1px solid;
+            display: block;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 6;
+
+          }
+
+          &__link-view:hover::after {
+            content: '';
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            position: relative;
+            z-index: 6;
+          }
+
+          &__technology {
+            display: flex;
+
+            & > span > img {
+
+              width: 100%;
+              height: 100%;
+              display: block;
+
+            }
+
+            & > span {
+              width: 52px;
+              height: 70px;
+              padding: 4px;
+              font-size: 10pt;
+              line-height: 30px;
+              font-weight: bold;
+              margin: 0 25px 0 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+            }
+
+            & > span > span {
+              width: 100% !important;
+              height: 100% !important;
+
+            }
+
+            & > span > span > span {
+              width: 100% !important;
+              height: 100% !important;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
   }
-}
 
-.All_box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.image {
-
-  width: 61%;
-  height: 700px;
-  padding: 24px;
-  background-color: #3719c9;
-}
-
-.image > img {
-
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.TextProject {
-  font-size: 35px;
-  width: 400px;
-  z-index: 3;
-  padding: 58px 5px 58px 44px;
-  line-height: 54px;
-  color: white;
-}
-
-.linkViewProject {
-
-  font-size: 12pt;
-  margin: 44px 0;
-  font-weight: bold;
-  display: block;
-  letter-spacing: 10px;
-  width: 219px;
-  padding: 17px 0;
-
-
-}
-
-
-.Technology {
-
-  display: flex;
-
-}
-
-
-.Technology > span {
-
-  width: 50px;
-  height: 50px;
-  padding: 4px;
-  font-size: 10pt;
-  line-height: 30px;
-  font-weight: bold;
-  margin: 0 25px 0 0;
-
-}
-
-.Technology > span > span {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.Technology > span > span > span {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-
-.Technology > span > img {
-
-  width: 100%;
-  height: 100%;
-  display: block;
-
-}
-
-.linkViewProject::after {
-
-  content: '';
-  width: 50%;
-  border-bottom: 1px solid;
-  display: block;
-  transition: all 0.3s;
-
-}
-
-.linkViewProject:hover::after {
-  content: '';
-  transition: all 0.3s;
-  display: block;
-  width: 100%;
 }
