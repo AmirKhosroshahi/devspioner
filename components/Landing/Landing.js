@@ -6,10 +6,11 @@ import ViewProject from '../../components/ViewProject/ViewProject';
 import H_head from '../../components/H_head/H_head';
 import Styles from "./index.module.scss";
 
-const Landing = ({imageLandingProjects,projectsLanding,itemTechnology}) => {
-    const viewAllProjects = projectsLanding?.map((item,index)=>{
-        return(
-            <ViewProject key={`item_${item.id}`}  id={index} title={item.title} link={item.link} image={item.image}  technology={itemTechnology}/>
+const Landing = ({imageLandingProjects, projectsLanding, itemTechnology}) => {
+    const viewAllProjects = projectsLanding?.map((item, index) => {
+        return (
+            <ViewProject key={`item_${item.id}`} id={index} title={item.title} link={item.link} image={item.image}
+                         technology={itemTechnology}/>
         )
     })
     return (
@@ -17,7 +18,7 @@ const Landing = ({imageLandingProjects,projectsLanding,itemTechnology}) => {
             <HeaderLanding/>
             <Advice/>
             <Recent_projects image={imageLandingProjects}/>
-            <H_head  className={Styles.globalCenter}>Project</H_head>
+            <H_head className={Styles.globalCenter}>Project</H_head>
             {viewAllProjects}
         </div>
     );
