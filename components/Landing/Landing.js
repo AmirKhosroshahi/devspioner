@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderLanding from "../../components/HeaderLanding/HeaderLanding";
-import Advice from "../../components/Advice/advice";
+import Advice from "../../components/Advice/Advice";
 import Recent_projects from "../../components/Recent_projects/Recent_projects";
 import ViewProject from '../../components/ViewProject/ViewProject';
 import H_head from '../../components/H_head/H_head';
