@@ -7,7 +7,7 @@ class Model
     function __construct()
     {
        
-        $serverName = 'devspioner-oqknhrclz-devspioner.vercel.app';
+        $serverName = 'localhost';
         $userName = 'root';
         $password = '';
         $dbName = 'mysite';
