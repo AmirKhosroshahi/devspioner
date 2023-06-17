@@ -2,7 +2,7 @@
 
 class model_Add_AdminSite extends Model
 {
-    public $url = 'https://devspioner-git-main-devspioner.vercel.app';
+    public $url = 'http://localhost';
 
     function __construct()
     {
