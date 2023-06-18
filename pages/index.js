@@ -6,15 +6,12 @@ import {effectScrollHome} from "../functionControlle/allFunction";
 export default function Index(props) {
 
     const {projectsLanding} = props.dataProjects;
-    const {itemTechnology} = props.dataProjects;
     const {imageLandingProjects} = props.datImageProjects;
-
     useEffect(() => {
         effectScrollHome('effect-text');
     }, []);
     return (
-        <Landing projectsLanding={projectsLanding} itemTechnology={itemTechnology}
-                 imageLandingProjects={imageLandingProjects}/>
+        <Landing projectsLanding={projectsLanding} imageLandingProjects={imageLandingProjects}/>
     )
 }
 

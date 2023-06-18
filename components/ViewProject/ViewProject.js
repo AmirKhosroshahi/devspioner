@@ -9,24 +9,21 @@ const ViewProject = ({id, title, link, image, technology}) => {
     useEffect(() => {
         effectScrollProject();
     })
-    const technologyAttr = technology?.map((item, index) => {
+    const technologyAttr = technology?.map((item) => {
         {
             return (
-                item.map((attr) => {
-                    return (
-                        <span key={`item_${attr.id}`}>
+                <span key={`item_${item.id}`}>
                         <Image
                             width={32}
                             height={32}
-                            src={attr?.image}
-                            alt=""/>
-                            {attr?.label}
+                            src={item?.image}
+                            alt={item?.label}/>
+                    {item?.label}
                     </span>
-                    )
-                })
             )
         }
     })
+
     return (
         <div className={clsx(Styles['main'])}>
             <section className={clsx(Styles['main__contact-view'])}>

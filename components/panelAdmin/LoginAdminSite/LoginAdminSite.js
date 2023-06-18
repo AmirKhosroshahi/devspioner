@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Styles from './LoginAdminSite.module.scss';
 import {ToastContainer, toast} from 'react-toastify';
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import {useRouter} from 'next/router'
+import {checkAdminLogin} from "../../../functionControlle/allFunction";
 
 const LoginAdminSite = () => {
     const router = useRouter();
@@ -17,6 +18,10 @@ const LoginAdminSite = () => {
             [event.target.name]: event.target.value,
         })
     }
+    useEffect(() => {
+        checkAdminLogin(router);
+    }, [])
+
     const handlerClickPost = (event) => {
         event.preventDefault();
         axios.post(process.env.NEXT_PUBLIC_LOGIN_ADDMIN_SITE, dataAdmin)

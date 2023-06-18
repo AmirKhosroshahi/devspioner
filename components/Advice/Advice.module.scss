@@ -4,8 +4,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 29px;
+  padding: 14px;
   color: white;
+  text-align: center;
 
   &__main {
     display: grid;
@@ -35,12 +36,13 @@
   }
   @media (min-width: 900px) {
 
-    .advice-box{
+    &{
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding: 40px 40px;
       color: white;
+      text-align: left;
 
       &__main{
         display: grid;
@@ -51,6 +53,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 27px;
           &>h5{
             font-size: 29pt;
             font-weight: normal;
@@ -64,6 +67,7 @@
           font-weight: bold;
           font-size: 12pt;
           text-align: left;
+          padding: 27px;
         }
 
       }

@@ -1,7 +1,7 @@
 import React from "react";
+
 import anime from "animejs";
 import Styles from "../components/Header/Header.module.scss";
-
 
 const activeHover = (active) => {
     const getLink = document.querySelectorAll(".nav>ul>li");
@@ -157,6 +157,17 @@ const blink = (rightEye, leftEye) => {
 
 }
 
+const checkAdminLogin = (router)=>{
+    const getAdmin = +localStorage.getItem('adm');
+    if (!getAdmin){
+        router.push('loginadmin');
+    }else if ( router.route === '/loginadmin'){
+        router.push('dashboardamircv');
+    }
+}
+
+
+
 export {
     odd,
     effectScrollHome,
@@ -168,4 +179,5 @@ export {
     blink,
     transformEffect,
     openMenu,
+    checkAdminLogin,
 };

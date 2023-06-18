@@ -39,7 +39,6 @@ const Header = () => {
     useEffect(() => {
         backgroundHeader();
         axios.get(process.env.NEXT_PUBLIC_CHECK_LOGIN_ADMIN)
-       
     })
     useEffect(() => {
         activeHover(active);

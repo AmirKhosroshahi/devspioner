@@ -2,17 +2,12 @@ import React, {useEffect} from "react";
 import Link from "next/link";
 import Styles from './SideBar.module.scss'
 import {useRouter} from 'next/router'
+import {checkAdminLogin} from "../../../functionControlle/allFunction";
 
 const SideBar = () => {
     const router = useRouter();
-    const checkAdminLogin = ()=>{
-      const getAdmin = +localStorage.getItem('adm');
-      if (!getAdmin){
-          router.push('loginadmin');
-      }
-    }
     useEffect(()=>{
-        checkAdminLogin();
+        checkAdminLogin(router);
     },[])
 
     const dataMenuDash = [

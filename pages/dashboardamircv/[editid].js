@@ -1,15 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Styles from "../../components/panelAdmin/MainDashboard/MainDashboard.module.scss";
 import SideBar from "../../components/panelAdmin/SideBar/SideBar";
 import Select from "react-select";
 import {techCompanies} from "../../static/data";
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import axios from "axios";
+import makeAnimated from 'react-select/animated';
 
 const Editid = (props) => {
     const {ProjectInfo} = props
-    const {infoProject} =  ProjectInfo
+    const {infoProject} = ProjectInfo;
     const router = useRouter();
     const idProject = router.query.editid;
     const [dataForm, setDataForm] = useState({
@@ -39,12 +40,22 @@ const Editid = (props) => {
 
     }
     const selectHandler = (event) => {
-
         setDataForm({
             ...dataForm,
             event
         })
     }
+
+    const animatedComponents = makeAnimated();
+    const filterCode = infoProject.technology.split(',');
+
+    const arrOfNum = filterCode.map(str => {
+        return parseInt(str, 10);
+    });
+
+    const filterTech = techCompanies.filter((element) => {
+        return arrOfNum.includes(element.value);
+    });
     return (
         <form method='post' action={`${process.env.NEXT_PUBLIC_BASE_URL}/sendAttrProject/${idProject}`}
               encType="multipart/form-data">
@@ -52,15 +63,26 @@ const Editid = (props) => {
                 <SideBar/>
                 <section className={Styles['main-dashboardamircv__section-project']}>
                     <div className={Styles['main-dashboardamircv__section-project__input']}>
-                        <input type="text" defaultValue={infoProject.title}   name='nameProject' placeholder='Name Project'
+                        <input type="text" defaultValue={infoProject.title} name='nameProject'
+                               placeholder='Name Project'
                                onChange={changeHandlers}/>
-                        <input type="text" defaultValue={infoProject.link}  name='linkProject' placeholder='Link Project'
+                        <input type="text" defaultValue={infoProject.link} name='linkProject' placeholder='Link Project'
                                onChange={changeHandlers}/>
-                        <Select options={techCompanies} isMulti name={'technology[]'}
-                                className={Styles['main-dashboardamircv__section-project__input_select']}
-                                placeholder={'technology'}
-                                onChange={selectHandler}/>
-                        <input type="file"   name='imageProject' placeholder='image Project'
+                        {
+                            <Select name={'technology[]'}
+                                    className={Styles['main-dashboardamircv__section-project__input_select']}
+                                    placeholder={'select technology'}
+                                    closeMenuOnSelect={false}
+                                    components={animatedComponents}
+                                    defaultValue={filterTech}
+                                    isMulti
+                                    onChange={(option) => selectHandler(option)}
+                                    options={techCompanies}
+                            />
+
+                        }
+
+                        <input type="file" name='imageProject' placeholder='image Project'
                                onChange={changeHandlersSelectFile}/>
                         <button>Send</button>
 
@@ -79,7 +101,7 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            ProjectInfo : getProjectInfo.data,
+            ProjectInfo: getProjectInfo.data,
         }
     }
 

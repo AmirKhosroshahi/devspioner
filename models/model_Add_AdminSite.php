@@ -19,19 +19,15 @@ class model_Add_AdminSite extends Model
 
     function getProjectsLanding()
     {
-
         $sql = 'select * from projects ORDER BY id desc limit 4';
-        $result = $this->doSelect($sql, []);
+        $result = $this->doSelect($sql);
         foreach ($result as $key => $item) {
-            $tech = unserialize($item['technology']);
-            $newTechArray = [];
-            foreach ($tech as $keyTech => $id) {
-                $sql2 = 'select * from technology where code=?';
-                $resultTech = $this->doSelect($sql2, [$id]);
-                array_push($newTechArray, $resultTech);
-            }
+            $tech = $item['technology'];
+            $sql2 = 'select * from technology where code IN (' . $tech . ') ';
+            $resultTech = $this->doSelect($sql2);
+            $result[$key]['technology'] = $resultTech;
         }
-        return json_encode(['projectsLanding' => $result, 'itemTechnology' => $newTechArray]);
+        return json_encode(['projectsLanding' => $result]);
     }
 
     function getAllProjects()
@@ -39,16 +35,12 @@ class model_Add_AdminSite extends Model
         $sql = 'select * from projects ORDER BY id desc';
         $result = $this->doSelect($sql, []);
         foreach ($result as $key => $item) {
-            $tech = unserialize($item['technology']);
-            $newTechArray = [];
-            foreach ($tech as $keyTech => $id) {
-                $sql2 = 'select * from technology where code=?';
-                $resultTech = $this->doSelect($sql2, [$id]);
-                array_push($newTechArray, $resultTech);
-            }
+            $tech = $item['technology'];
+            $sql2 = 'select * from technology where code IN (' . $tech . ') ';
+            $resultTech = $this->doSelect($sql2);
+            $result[$key]['technology'] = $resultTech;
         }
-
-        return json_encode(['AllProjects' => $result, 'itemTechnology' => $newTechArray]);
+        return json_encode(['AllProjects' => $result]);
     }
 
     function getImageProjectLanding()
@@ -74,12 +66,10 @@ class model_Add_AdminSite extends Model
 
     function validationFrom($data)
     {
-
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-
     }
 
     function validData($string)
@@ -146,12 +136,11 @@ class model_Add_AdminSite extends Model
 
     function sendAttrProjects($data, $file, $id)
     {
-
         if (!empty($data)) {
 
             $nameProject = $this->validationFrom($data['nameProject']);
             $linkProject = $this->validationFrom($data['linkProject']);
-            $technology = serialize($data['technology']);
+            $technology = join(',', $data['technology']);
 
             if (empty($id)) {
 
@@ -205,57 +194,58 @@ class model_Add_AdminSite extends Model
 
             } else {
 
-                $sql = 'update projects set title=?,link=?,technology=? where id=?';
-                $this->doQuery($sql, [$nameProject, $linkProject, $technology, $id]);
+                if (!empty($technology)){
+                    $sql = 'update projects set title=?,link=?,technology=? where id=?';
+                    $this->doQuery($sql, [$nameProject, $linkProject, $technology, $id]);
+                    if (isset($file['imageProject'])) {
 
-                if (isset($file['imageProject'])) {
+                        $fileAttr = $file['imageProject'];
+                        $imageName = $fileAttr['name'];
+                        $fileTyp = $fileAttr['type'];
+                        $fileTmp_name = $fileAttr['tmp_name'];
+                        $fileError = $fileAttr['error'];
+                        $fileSize = $fileAttr['size'];
+                        $uploadYes = 1;
+                        $insertYes = 1;
+                        $randomTime = time() * 2;
+                        $newName = $randomTime;
+                        $targetMine = 'public/image/image_project/';
+                        $ImageSave_Nwe_Dir = $targetMine . $id . '/';
+                        if ($fileTyp !== 'image/jpeg' and $fileTyp !== 'image/jpg' and $fileTyp !== 'image/png' and $fileTyp !== 'image/svg+xml') {
+                            $uploadYes = 0;
+                            $insertYes = 0;
 
-                    $fileAttr = $file['imageProject'];
-                    $imageName = $fileAttr['name'];
-                    $fileTyp = $fileAttr['type'];
-                    $fileTmp_name = $fileAttr['tmp_name'];
-                    $fileError = $fileAttr['error'];
-                    $fileSize = $fileAttr['size'];
-                    $uploadYes = 1;
-                    $insertYes = 1;
-                    $randomTime = time() * 2;
-                    $newName = $randomTime;
-                    $targetMine = 'public/image/image_project/';
-                    $ImageSave_Nwe_Dir = $targetMine . $id . '/';
-                    if ($fileTyp !== 'image/jpeg' and $fileTyp !== 'image/jpg' and $fileTyp !== 'image/png' and $fileTyp !== 'image/svg+xml') {
-                        $uploadYes = 0;
-                        $insertYes = 0;
-
-                    }
-                    if ($fileSize <= 0) {
-
-                        $uploadYes = 0;
-                        $insertYes = 0;
-                    }
-                    if ($fileSize > 41453494304) {
-                        $uploadYes = 0;
-                        $insertYes = 0;
-                    }
-                    if ($uploadYes == 1) {
-
-                        $selectImage = 'select tmp_image from projects where id=?';
-                        $result = $this->doSelect($selectImage, [$id], 1);
-                        if (file_exists($result['tmp_image'])) {
-                            unlink($result['tmp_image']);
                         }
-                        $exe = pathinfo($imageName, PATHINFO_EXTENSION);
-                        $target = $ImageSave_Nwe_Dir . $newName . '.' . $exe;
-                        $nameImageTable = '/image/image_project/' . $id . '/' . $newName . '.' . $exe;
-                        move_uploaded_file($fileTmp_name, $target);
-                        $sql = 'update projects set image=?,tmp_image=? where id=?';
-                        $this->doQuery($sql, [$nameImageTable, $target, $id]);
+                        if ($fileSize <= 0) {
+
+                            $uploadYes = 0;
+                            $insertYes = 0;
+                        }
+                        if ($fileSize > 41453494304) {
+                            $uploadYes = 0;
+                            $insertYes = 0;
+                        }
+                        if ($uploadYes == 1) {
+
+                            $selectImage = 'select tmp_image from projects where id=?';
+                            $result = $this->doSelect($selectImage, [$id], 1);
+                            if (file_exists($result['tmp_image'])) {
+                                unlink($result['tmp_image']);
+                            }
+                            $exe = pathinfo($imageName, PATHINFO_EXTENSION);
+                            $target = $ImageSave_Nwe_Dir . $newName . '.' . $exe;
+                            $nameImageTable = '/image/image_project/' . $id . '/' . $newName . '.' . $exe;
+                            move_uploaded_file($fileTmp_name, $target);
+                            $sql = 'update projects set image=?,tmp_image=? where id=?';
+                            $this->doQuery($sql, [$nameImageTable, $target, $id]);
+
+                        }
 
                     }
-
                 }
                 header('location:' . $this->url . '/dashboardamircv/');
             }
-            
+
         }
 
     }
@@ -358,7 +348,6 @@ class model_Add_AdminSite extends Model
 
     }
 
-
     function loginAdminSiteInfo($data)
     {
         $email = $this->validationFrom($data['email']);
@@ -395,6 +384,13 @@ class model_Add_AdminSite extends Model
         Model::sessionInit();
         $admin = Model::sessionGet('Admin');
         return json_encode($admin);
+    }
+
+    function editSelect($data){
+        $dataSelect = $data['ids'];
+        $sql2 = 'select label,value,image from technology where code IN (' . $dataSelect . ') ';
+        $resultTech = $this->doSelect($sql2);
+        return json_encode($resultTech);
     }
 }
 

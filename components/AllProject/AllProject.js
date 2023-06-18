@@ -4,11 +4,11 @@ import ViewProject from "../ViewProject/ViewProject";
 import H_head from '../H_head/H_head';
 import Recent_projects from "../Recent_projects/Recent_projects";
 
-const AllProject = ({projectsLanding,imageLandingProjects,ourClient,itemTechnology}) => {
+const AllProject = ({projectsLanding,imageLandingProjects,ourClient}) => {
 
     const viewAllProjects = projectsLanding?.map((item,index)=>{
         return(
-            <ViewProject key={`item_${item.id}`}  id={index} title={item.title} link={item.link} image={item.image} technology={itemTechnology}/>
+            <ViewProject key={`item_${item.id}`}  id={index} title={item.title} link={item.link} image={item.image} technology={item.technology}/>
         )
     })
     return (

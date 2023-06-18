@@ -4,13 +4,11 @@ import axios from "axios";
 
 const Index = (props) => {
     const {AllProjects} = props?.dataProjects
-    const {itemTechnology} = props?.dataProjects
     const {imageLandingProjects} = props?.datImageProjects
     const {AllOurClient} = props?.dataOurClient
     return (
         <div>
-            <AllProject projectsLanding={AllProjects} itemTechnology={itemTechnology}
-                        imageLandingProjects={imageLandingProjects} ourClient={AllOurClient}/>
+            <AllProject projectsLanding={AllProjects} imageLandingProjects={imageLandingProjects} ourClient={AllOurClient}/>
         </div>
     );
 };

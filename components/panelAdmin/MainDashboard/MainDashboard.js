@@ -12,7 +12,7 @@ import clsx from "clsx";
 const MainDashboard = (props) => {
         const router = useRouter()
         const {dataEditProject} = props;
-        const {AllProjects, itemTechnology} = dataEditProject
+        const {AllProjects} = dataEditProject
 
         const [dataForm, setDataForm] = useState({
             nameProject: '',
@@ -48,16 +48,14 @@ const MainDashboard = (props) => {
             })
         }
 
-
         const handlerClick = (id, method = '') => {
             if (!method) {
-                router.push(`/dashboardamircv/${id}`);
+                router.push(`dashboardamircv/${id}`);
             } else {
                 axios.delete(`${process.env.NEXT_PUBLIC_DELETE_PROJECT}/${id}`)
                 const infoDelete = document.querySelector(`.project_${id}`);
                 infoDelete.remove();
             }
-
         }
 
         const dataMapAllProject = AllProjects?.map(item => {
@@ -82,6 +80,7 @@ const MainDashboard = (props) => {
                 </>
             )
         });
+
         return (
             <>
                 <form method='post' action={`${process.env.NEXT_PUBLIC_BASE_URL}/sendAttrProject`}
