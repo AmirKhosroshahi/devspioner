@@ -7,10 +7,10 @@ class Model
     function __construct()
     {
        
-        $serverName = 'https://devspioner-oqknhrclz-devspioner.vercel.app';
-        $userName = 'root';
-        $password = '';
-        $dbName = 'mysite';
+        $serverName = 'localhost';
+        $userName = 'admin_devspioner';
+        $password = 'devspioner_89089';
+        $dbName = 'admin_devspioner';
         self::$conn = new PDO('mysql:host=' . $serverName . ';dbname=' . $dbName, $userName, $password);
         self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
