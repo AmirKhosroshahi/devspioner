@@ -13,7 +13,9 @@ class Model
         $dbName = 'admin_devspioner';
         self::$conn = new PDO('mysql:host=' . $serverName . ';dbname=' . $dbName, $userName, $password);
         self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
     }
 
     function doSelect($sql, $values = [], $fetch = '', $fetchStyle = PDO::FETCH_ASSOC)
