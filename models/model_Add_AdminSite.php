@@ -2,7 +2,7 @@
 
 class model_Add_AdminSite extends Model
 {
-    public $url = 'http://localhost';
+    public $url = 'http://212.90.103.135';
 
     function __construct()
     {
