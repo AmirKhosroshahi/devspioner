@@ -113,11 +113,6 @@ class Add_AdminSite extends Controller
         return $res;
     }
 
-    function editSelect(){
-        $dataPostApi = $this->dataPost($_POST);
-        $res = $this->model->editSelect($dataPostApi);
-        echo  $res;
-    }
 
 }
 

@@ -15,7 +15,7 @@ const Footer = () => {
                         a quote </a></Link>
                     <span style={{padding: '22px 27px 22px 25px'}}>Or</span>
                     <span className={Styles['footer-site__footer-text__contact__email']}>Email :  <span
-                        style={{color: `#3719c9`}}>barnamenvican@gmail.com</span>  </span>
+                        style={{color: `#3719c9`}}>devspioner@gmail.com</span>  </span>
                 </div>
             </div>
         </footer>

@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
     useEffect(()=>{
         let getUrl = router.pathname;
         document.title = getUrl === '/' ? 'Home' : getUrl.replace('/','');
-        
+
         //Character head
         let tagPointer = document.querySelector('.pointer');
         //Right Eye

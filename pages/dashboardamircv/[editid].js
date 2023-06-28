@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import Styles from "../../components/panelAdmin/MainDashboard/MainDashboard.module.scss";
 import SideBar from "../../components/panelAdmin/SideBar/SideBar";

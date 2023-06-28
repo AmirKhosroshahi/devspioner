@@ -11,11 +11,13 @@ import {activeHover, backgroundHeader, openMenu} from '../../functionControlle/a
 import {useRouter} from "next/router";
 import axios from "axios";
 /* Function Component */
+
 const Header = () => {
     /*  Create State  */
     const [active, setActive] = useState(true);
     const [activeClick, setActiveClick] = useState(true);
     const router = useRouter();
+
     const nameLink = router.asPath;
     const dataMenu = [
         {
@@ -65,7 +67,7 @@ const Header = () => {
                             <Link href="/" className={Styles['menu-header__content-menu__left__log__not-padding']}>
                                 <a>
                                     <Image
-                                        src='/image/logo.png'
+                                        src='/image/Devs_Pioner.svg'
                                         alt="Logo"
                                         width={'158'}
                                         height={'100%'}

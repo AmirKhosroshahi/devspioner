@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import anime from "animejs";
 import Styles from "../components/Header/Header.module.scss";
@@ -58,7 +58,6 @@ function effectScrollProject() {
             const dataIud = item.dataset.iud;
             item.style = '';
         })
-
     })
 
 }
@@ -142,30 +141,28 @@ const openMenu = (setActiveClick, activeClick) => {
     Menu.classList.toggle(Styles['open']);
 
 
-
 }
-
 const blink = (rightEye, leftEye) => {
-    let effectCloseTheEyes = setInterval(() => {
+
+    setInterval(() => {
         rightEye.style.transform = `rotateX(100deg)`;
         leftEye.style.transform = `rotateX(100deg)`;
+
     }, 5000)
-    let effectOpenEye = setInterval(() => {
+    setInterval(() => {
         rightEye.style.transform = `rotateX(0)`;
         leftEye.style.transform = `rotateX(0)`;
     }, 3000)
-
 }
 
-const checkAdminLogin = (router)=>{
+const checkAdminLogin = (router) => {
     const getAdmin = +localStorage.getItem('adm');
-    if (!getAdmin){
+    if (!getAdmin) {
         router.push('loginadmin');
-    }else if ( router.route === '/loginadmin'){
+    } else if (router.route === '/loginadmin') {
         router.push('dashboardamircv');
     }
 }
-
 
 
 export {

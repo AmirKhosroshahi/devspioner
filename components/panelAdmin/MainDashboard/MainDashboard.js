@@ -83,7 +83,7 @@ const MainDashboard = (props) => {
 
         return (
             <>
-                <form method='post' action={`${process.env.NEXT_PUBLIC_BASE_URL}/sendAttrProject`}
+                <form method='post' action={process.env.NEXT_PUBLIC_POST_ATTR_PROJECT}
                       encType="multipart/form-data">
                     <div className={Styles['main-dashboardamircv']}>
                         <SideBar/>
