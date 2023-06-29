@@ -8,9 +8,9 @@ class Model
     {
        
         $serverName = 'localhost';
-        $userName = 'admin_devspioner';
-        $password = 'devspioner_89089';
-        $dbName = 'admin_devspioner';
+        $userName = 'root';
+        $password = '';
+        $dbName = 'mysite';
         self::$conn = new PDO('mysql:host=' . $serverName . ';dbname=' . $dbName, $userName, $password);
         self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         header("Access-Control-Allow-Origin: http://212.90.103.135:3000/");
