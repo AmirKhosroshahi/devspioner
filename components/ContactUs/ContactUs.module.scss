@@ -55,12 +55,13 @@
     }
 
     &__sub {
-      display: grid;
+      display: block;
       grid-column-start: 1;
       grid-column-end: 3;
       justify-content: right;
 
       & > button {
+        width: 100%;
         padding: 10px;
         background: #3719c9;
         color: white;

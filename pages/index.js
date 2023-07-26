@@ -20,7 +20,6 @@ export async function getServerSideProps({req, res}) {
 
     const landingProjects = await axios.get(process.env.NEXT_PUBLIC_DATA_PROJECTS_LANDING)
     const imageProjects = await axios.get(process.env.NEXT_PUBLIC_GET_IMAGE_PROJECT_LANDING)
-
     return {
         props: {
             dataProjects: landingProjects.data,

@@ -1,4 +1,5 @@
- export const techCompanies = [
+
+export const techCompanies = [
     {label: "Javascript", value:1, image: '/image/icons8-js-50.png'},
     {label: "React", value: 2, image: '/image/reactJs.svg'},
     {label: "TypeScript", value: 3, image: '/image/icons8-typescript.svg'},

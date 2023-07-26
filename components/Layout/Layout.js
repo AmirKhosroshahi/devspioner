@@ -3,17 +3,19 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Headers";
 import Head from "next/head";
 export const logo = '/image/logo.png';
-const Layout = ({children}) => {
 
+const Layout = ({children}) => {
     return (
         <div>
             <Head>
                 <title>Home</title>
                 <meta name="description" content=""/>
-                <link rel="icon" href={logo} />
+                <link rel="icon" href={logo}/>
             </Head>
             <Header/>
-            <main>{children}</main>
+            
+                <main>{children}</main>
+           
             <Footer/>
             <span className='pointer'>
                 <span className='pointer__right-eye'></span>
@@ -23,5 +25,6 @@ const Layout = ({children}) => {
         </div>
     );
 };
+
 
 export default Layout;

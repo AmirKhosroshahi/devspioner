@@ -24,7 +24,7 @@ const backgroundHeader = () => {
     let getTagHeader = document.querySelector(".header")
     window.addEventListener("scroll", e => {
         if (window.scrollY > 0) {
-            getTagHeader.style = 'position:fix;background:rgba(2, 2, 31, 0.87) none repeat scroll 0% 0%;padding-top: 10px;z-index:2'
+            getTagHeader.style = 'position:fix;background:#02021ff7 none repeat scroll 0% 0%;padding-top: 10px;z-index:5'
         } else {
             getTagHeader.style = 'padding: 10px;'
         }
@@ -85,7 +85,7 @@ const movCircleHandler = (event, CircleLeft, CircleRight) => {
         CircleRight.current.style = `left:40px;`;
         CircleLeft.current.style = `right:100px;`;
     }
-
+    
 
 }
 

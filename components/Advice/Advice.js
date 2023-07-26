@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Styles from './Advice.module.scss';
+import {description} from "../../static/language";
 
 const Advice = () => {
+    const [dataDescription , setDescription] = useState([]);
+    useEffect(()=>{
+        setDescription(description)
+    },[])
     return (
         <div className={Styles['advice-box']}>
             <div className={Styles['advice-box__main']}>
                 <div className={Styles['advice-box__main__text-left']}>
                     <h5>
-                        Driving your business forward with strong products
+                        {dataDescription.left}
                     </h5>
                 </div>
                 <div className={Styles['advice-box__main__text-right']}>
                     <p>
-                        We are a full-service digital agency that builds immersive user experience. Our team creates an
-                        exceptional visualization and thought-out functionality. We believe, our clients deserve to be
-                        remarkable in their business. The studio develops the products people appreciate all around the
-                        world.
+                        {dataDescription.right}
                     </p>
                 </div>
             </div>

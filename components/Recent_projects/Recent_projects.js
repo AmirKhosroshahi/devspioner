@@ -1,19 +1,24 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Styles from './Recent_projects.module.scss';
 import H_head from '../H_head/H_head';
 import clsx from "clsx";
 import {transformEffect} from '../../functionControlle/allFunction'
 import Image from "next/image";
+import {workImage} from "../../static/language";
+
 const Recent_projects = ({image}) => {
    
     const transform = useRef(null);
-    /*  Lifecycle ===> Mounting */
+    const [dataWork,setDataWork] = useState([]);
+    
     useEffect(() => {
 
         transformEffect(transform)
 
     }, [])
-
+   useEffect(()=>{
+       setDataWork(workImage)
+   },[])
     const createImage = image?.map((images, index) => {
         return (
             <div className={Styles['content__recent-projects__Pro']} key={`item_${index}`}>
@@ -28,7 +33,7 @@ const Recent_projects = ({image}) => {
 
     return (
         <div className={Styles['content']}>
-            <H_head>Recent Works</H_head>
+            <H_head>{dataWork[0]}</H_head>
             <div ref={transform} className={clsx(Styles['content__recent-projects'], 'trans')}>
                 {
                     createImage

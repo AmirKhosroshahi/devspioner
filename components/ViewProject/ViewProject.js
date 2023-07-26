@@ -1,14 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Styles from './ViewProject.module.scss';
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import {odd, effectScrollProject} from '../../functionControlle/allFunction';
+import {viewProject} from "../../static/language";
 
 const ViewProject = ({id, title, link, image, technology}) => {
+    
+    const [dataView,setDataView] = useState([])
     useEffect(() => {
         effectScrollProject();
     })
+    
+    useEffect(()=>{
+        setDataView(viewProject);
+    },[])
     const technologyAttr = technology?.map((item) => {
         {
             return (
@@ -42,7 +49,7 @@ const ViewProject = ({id, title, link, image, technology}) => {
                         {title}
                         <Link href={`${link}`}>
                             <a className={Styles['main__contact-view__all-box__link-view']} target='_blank'>
-                                view project
+                                {dataView[0]}
                             </a>
                         </Link>
                         <div className={Styles['main__contact-view__all-box__technology']}>

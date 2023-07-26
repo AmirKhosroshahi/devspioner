@@ -9,55 +9,60 @@ import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {activeHover, backgroundHeader, openMenu} from '../../functionControlle/allFunction';
 import {useRouter} from "next/router";
-import axios from "axios";
-/* Function Component */
+import {menu} from '../../static/language';
+
 
 const Header = () => {
     /*  Create State  */
     const [active, setActive] = useState(true);
     const [activeClick, setActiveClick] = useState(true);
+    const [dataMeu, setDataMenu] = useState([]);
     const router = useRouter();
-
     const nameLink = router.asPath;
-    const dataMenu = [
-        {
-            link: '/',
-            title: 'Home',
-            activeClass: nameLink === '/' && clsx(Styles.activeClick)
-        }
-        ,
-        {
-            link: '/projects',
-            title: 'Projects',
-            activeClass: nameLink === '/projects' && clsx(Styles.activeClick)
-        }
-        ,
-        {
-            link: '/contactus',
-            title: 'Contact us',
-            activeClass: nameLink === '/contactus' && clsx(Styles.activeClick)
-        }
-    ];
+    useEffect(() => {
+        setDataMenu(menu);
+    }, [])
     useEffect(() => {
         backgroundHeader();
-        axios.get(process.env.NEXT_PUBLIC_CHECK_LOGIN_ADMIN)
     })
     useEffect(() => {
         activeHover(active);
     }, [active])
-
+    const {Home, Projects, contact} = dataMeu;
+    const dataMenu = [
+        {
+            id:1,
+            link: '/',
+            title: Home,
+            activeClass: nameLink === '/' && clsx(Styles.activeClick)
+        }
+        ,
+        {
+            id:2,
+            link: '/projects',
+            title: Projects,
+            activeClass: nameLink === '/projects' && clsx(Styles.activeClick)
+        }
+        ,
+        {
+            id:3,
+            link: '/contactus',
+            title: contact,
+            activeClass: nameLink === '/contactus' && clsx(Styles.activeClick)
+        }
+    ];
     const mapDataMenu = dataMenu.map(item => {
         return (
-            <li key={item.title}>
-                <Link href={item.link}>
-                    <a className={clsx(item.activeClass)} onClick={() => openMenu(setActiveClick, activeClick)}>
+            <li key={item.id}>
+                <Link key={item.link} href={item.link}>
+                    <a key={item.title} className={clsx(item.activeClass)} onClick={() => openMenu(setActiveClick, activeClick)}>
                         {item.title}
                     </a>
                 </Link>
             </li>
         )
     })
-
+    
     return (
         <header className={clsx(Styles['menu-header'], 'header')}>
             <div className='container-fluid'>
@@ -94,5 +99,6 @@ const Header = () => {
         </header>
     );
 };
+
 
 export default Header;

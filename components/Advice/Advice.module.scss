@@ -19,9 +19,10 @@
       align-items: center;
 
       & > h5 {
-        font-size: 23pt;
+        font-size: 20pt;
         font-weight: normal;
         line-height: 61px;
+        padding: 9px;
       }
 
     }
@@ -47,7 +48,7 @@
       &__main{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-        padding: 43px 160px 52px 165px;
+        padding: 0 160px 52px 165px;
 
         &__text-left{
           display: flex;

@@ -65,6 +65,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
+        z-index: 10;
       }
 
       &__nav {
@@ -72,7 +73,7 @@
         position: relative;
 
         & > ul.open {
-          top: 10px;
+          top: 0;
         }
 
         & > ul {
@@ -81,24 +82,23 @@
           line-height: 36px;
           flex-direction: column;
           background: #02021f;
-          padding: 0;
-          width: 50%;
-          height: auto;
-          border: 1px solid #4f4f68;
-          border-radius: 10px;
-          left: 10px;
-          top: -500px;
+          padding: 71px 0 0 0;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: -1000px;
           transition: all 0.4s;
+          align-items: center;
 
           & > li:last-child {
             margin-bottom: 16px;
           }
 
           & > li {
-            margin: 0 0 0 17px;
             display: flex;
             position: relative;
-            width: 71%;
+            width: auto;
+            justify-content: center;
 
             & > a {
               font-size: 11pt;

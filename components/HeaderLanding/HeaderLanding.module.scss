@@ -1,14 +1,13 @@
-
 /* HeaderLanding */
 
-.section-text{
+.section-text {
   display: flex;
-  height: 500px;
+  height: 200px;
   justify-content: center;
   align-items: center;
   text-align: center;
   line-height: 102px;
-  position : relative;
+  position: relative;
   background-image: linear-gradient(90deg, #000, #fff 50%, #000);
   background-size: 200%;
   background-position: 55.7895% center;
@@ -17,10 +16,12 @@
   -webkit-text-fill-color: transparent;
   animation: EffectText 1s ease-in-out 1;
   transition: all .1s cubic-bezier(.67, .13, .1, .81);
-  &> h5 {
+  margin: 91px 0 55px 0;
+  & > h5 {
     font-size: 3rem;
     text-align: center;
   }
+
   @keyframes EffectText {
 
     0% {
@@ -66,10 +67,10 @@
 
   }
 
-  &__circle-left{
+  &__circle-left {
     width: 60px;
     height: 60px;
-    background: linear-gradient(156.8deg,#fff 15%,#79b0e8 75.42%);
+    background: linear-gradient(156.8deg, #fff 15%, #79b0e8 75.42%);
     left: 100px;
     top: 168px;
     border-radius: 50%;
@@ -78,10 +79,10 @@
     display: none;
   }
 
-  &__circle-right{
+  &__circle-right {
     width: 30px;
     height: 30px;
-    background: linear-gradient(37.94deg,rgba(16,8,74,0) 16.94%,#83a4ff 87.08%),#02021e;
+    background: linear-gradient(37.94deg, rgba(16, 8, 74, 0) 16.94%, #83a4ff 87.08%), #02021e;
     right: 100px;
     top: 168px;
     border-radius: 50%;
@@ -92,26 +93,16 @@
 
 
   @media (min-width: 900px) {
-    &{
-      display: flex;
+    & {
+
       height: 100vh;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      line-height: 102px;
-      position : relative;
-      background-image: linear-gradient(90deg, #000, #fff 50%, #000);
-      background-size: 200%;
-      background-position: 55.7895% center;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: EffectText 1s ease-in-out 1;
-      transition: all .1s cubic-bezier(.67, .13, .1, .81);
-      &> h5 {
+      margin: 0;
+
+      & > h5 {
         font-size: 6rem;
         text-align: center;
       }
+
       @keyframes EffectText {
         0% {
           background-image: linear-gradient(90deg, #000, #fff 55%, #000);
@@ -156,10 +147,10 @@
 
       }
 
-      &__circle-left{
+      &__circle-left {
         width: 60px;
         height: 60px;
-        background: linear-gradient(156.8deg,#fff 15%,#79b0e8 75.42%);
+        background: linear-gradient(156.8deg, #fff 15%, #79b0e8 75.42%);
         left: 100px;
         top: 168px;
         border-radius: 50%;
@@ -168,10 +159,10 @@
         display: block;
       }
 
-      &__circle-right{
+      &__circle-right {
         width: 30px;
         height: 30px;
-        background: linear-gradient(37.94deg,rgba(16,8,74,0) 16.94%,#83a4ff 87.08%),#02021e;
+        background: linear-gradient(37.94deg, rgba(16, 8, 74, 0) 16.94%, #83a4ff 87.08%), #02021e;
         right: 100px;
         top: 168px;
         border-radius: 50%;
@@ -183,9 +174,14 @@
     }
 
 
-
   }
-
+  @media (min-width: 320px) and (max-width: 500px) {
+    & {
+      & > h5 {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }
 
 

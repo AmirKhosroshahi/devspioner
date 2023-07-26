@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Styles from './ContactUs.module.scss';
 import H_head from '../H_head/H_head';
 import axios from "axios";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {contactUs} from "../../static/language";
 
 const ContactUs = () => {
-
+    
     const [dataForm, setDataForm] = useState({
         name: '',
         email: '',
         text: '',
     });
+    const [dataContact, setDataContact] = useState([]);
+    useEffect(() => {
+        setDataContact(contactUs);
+    }, [])
     const changeHandlers = (event) => {
         setDataForm({
             ...dataForm,
@@ -20,7 +25,7 @@ const ContactUs = () => {
     }
     const PrevDefaultHandler = (event) => {
         event.preventDefault();
-
+        
         axios.post(process.env.NEXT_PUBLIC_SAVE_CONTACTUS, dataForm)
             .then(res => {
                 let arrayError = res?.data;
@@ -40,7 +45,7 @@ const ContactUs = () => {
                         progress: undefined,
                     });
                 }
-
+                
                 typeof (arrayError) === "object" &&
                 (
                     arrayError.map((item, index) => toast.error(arrayError[index][0], {
@@ -55,26 +60,26 @@ const ContactUs = () => {
                 )
             })
     }
-
-
+    
+    
     return (
         <div className={Styles['content-contact-us']}>
-            <H_head>So, what do you need?</H_head>
+            <H_head>{dataContact.title}</H_head>
             <form className={Styles['content-contact-us__form-contact-us']}>
                 <input value={dataForm.name} type="text" name='name' onChange={changeHandlers}
-                       placeholder='Name'/>
+                       placeholder={dataContact.name}/>
                 <input value={dataForm.email} type="text" name='email' onChange={changeHandlers}
-                       placeholder='Email'/>
+                       placeholder={dataContact.email}/>
                 <div className={Styles['content-contact-us__form-contact-us__textAr']}>
                     <textarea value={dataForm.text} name='text' onChange={changeHandlers}
-                              placeholder='Tell us what do you need.'></textarea>
+                              placeholder={dataContact.nz}></textarea>
                 </div>
                 <div className={Styles['content-contact-us__form-contact-us__sub']}>
                     <button onClick={PrevDefaultHandler}>Submit</button>
                 </div>
                 <ToastContainer/>
             </form>
-
+        
         </div>
     );
 };
